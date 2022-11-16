@@ -62,7 +62,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 cp $HOME/myconfig/dotfiles/zshrc $HOME/.zshrc
 chsh -s $(which zsh)
 
-printf "${yellow}>>>${nc} ${cyan}Installation complete${nc}\n"
+printf "${yellow}>>>${nc} ${cyan}Cleaning up the mess...${nc}\n"
+rm -rf $HOME/SFPro
+rm -rf $HOME/PowerlineFonts
+echo done
+
 printf "${yellow}>>>${nc} ${red}System will reboot in 5 seconds${nc}\n"
 sleep 5
+echo rebooting...
 reboot
