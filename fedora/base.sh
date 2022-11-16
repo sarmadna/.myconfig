@@ -62,18 +62,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 cp $HOME/myconfig/dotfiles/zshrc $HOME/.zshrc
 chsh -s $(which zsh)
 
-if [ $(echo $XDG_CURRENT_DESKTOP) == "GNOME" ]
-then
-	printf "${yellow}>>>${nc} ${cyan}Setting up Gnome DE...${nc}\n"
-	sh $HOME/myconfig/fedora/gnome/gnome.sh
-fi
-
-if [ $(echo $XDG_CURRENT_DESKTOP) == "KDE" ]
-then
-	printf "${yellow}>>>${nc} ${cyan}Setting up KDE...${nc}\n"
-	sh $HOME/myconfig/fedora/kde/kde.sh
-fi
-
 printf "${yellow}>>>${nc} ${cyan}Installation complete${nc}\n"
 printf "${yellow}>>>${nc} ${red}System will reboot in 5 seconds${nc}\n"
 sleep 5

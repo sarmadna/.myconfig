@@ -11,5 +11,4 @@ sudo dnf -y install \
 	sqlite \
 	inkscape \
 	timeshift \
-	transmission-cli \
 	telegram-desktop \

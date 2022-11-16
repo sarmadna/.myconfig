@@ -89,13 +89,13 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-#
+
+# Automatically start tmux in console
 # If not running interactively, do not do anything
 #[[ $- != *i* ]] && return
 # Otherwise start tmux
 #[[ -z "$TMUX" ]] && exec tmux
-#
+
 # Example aliases
 alias zcon="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -109,6 +109,8 @@ alias gaac="git add --all && git commit -m 'update'"
 #LS_COLORS='di=34'
 #alias ls="ls --color"
 #export LS_COLORS
+
+# TTY display manager login
 #if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 #exec startx
 #fi
