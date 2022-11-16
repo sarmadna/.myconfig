@@ -1,0 +1,2 @@
+# myconfig
+Linux configuration scripts
