@@ -10,6 +10,7 @@ sudo dnf -y groupinstall "KDE Plasma Workspaces"
 printf "${yellow}>>>${nc} ${cyan}Installing some apps...${nc}\n"
 sudo dnf -y install \
 	ark \
+	firefox \
 	papirus-icon-theme
 
 printf "${yellow}>>>${nc} ${cyan}Removing some useless apps...${nc}\n"
