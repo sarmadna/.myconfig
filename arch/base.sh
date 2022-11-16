@@ -40,9 +40,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 printf "${yellow}>>>${nc} ${cyan}	Services${nc}\n"
 systemctl enable NetworkManager
+systemctl enable firewalld
 
 printf "${yellow}>>>${nc} ${cyan}	Users${nc}\n"
 useradd -m -c "Sarmad" sarmad
 usermod -aG wheel sarmad
 passwd sarmad
+echo "sarmad ALL=(ALL) ALL" >> /etc/sudoers.d/sarmad
 
