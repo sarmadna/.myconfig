@@ -7,6 +7,7 @@ nc='\033[0m'
 printf "${yellow}>>>${nc} ${cyan}Installing apps...${nc}\n"
 sudo dnf -y install \
 	gnome-tweaks \
+	papirus-icon-theme \
 	gnome-extensions-app
 
 printf "${yellow}>>>${nc} ${cyan}Removing built-in shell extensions...${nc}\n"
@@ -22,3 +23,5 @@ gsettings set org.gnome.desktop.interface enable-hot-corners false
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ara'), ('xkb', 'iq+ku_ara')]"
+
+rm -rf $HOME/WhiteSur-icon-theme
