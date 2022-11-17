@@ -13,6 +13,9 @@ sudo dnf -y install \
 	firefox \
 	papirus-icon-theme
 
+printf "${yellow}>>>${nc} ${cyan}Copying images...${nc}\n"
+cp -rv $HOME/.myconfig/images $HOME/Pictures
+
 printf "${yellow}>>>${nc} ${cyan}Removing some useless apps...${nc}\n"
 sudo dnf -y remove \
 	kmail \

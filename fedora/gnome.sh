@@ -24,5 +24,8 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ara'), ('xkb', 'iq+ku_ara')]"
 
-cp -rv $HOME/myconfig/images $HOME/Pictures
+printf "${yellow}>>>${nc} ${cyan}Copying images...${nc}\n"
+cp -rv $HOME/.myconfig/images $HOME/Pictures
+
+printf "${yellow}>>>${nc} ${cyan}Cleaning up...${nc}\n"
 rm -rf $HOME/WhiteSur-icon-theme

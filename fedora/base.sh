@@ -32,8 +32,8 @@ sudo dnf -y install \
 	https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 	https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 mkdir -p $HOME/.config/cava
-cp $HOME/myconfig/dotfiles/cavaconfig $HOME/.config/cava/config
-cp $HOME/myconfig/dotfiles/tmux.conf $HOME/.tmux.conf
+cp $HOME/.myconfig/dotfiles/cavaconfig $HOME/.config/cava/config
+cp $HOME/.myconfig/dotfiles/tmux.conf $HOME/.tmux.conf
 
 printf "${yellow}>>>${nc} ${cyan}Installing fonts...${nc}\n"
 # Powerline fonts for console
@@ -41,7 +41,7 @@ git clone https://github.com/powerline/fonts.git $HOME/PowerlineFonts
 sh $HOME/PowerlineFonts/install.sh
 sudo cp $HOME/PowerlineFonts/Terminus/PSF/*.gz /usr/lib/kbd/consolefonts/
 sudo mv /etc/vconsole.conf /etc/vconsole.conf.old
-sudo cp $HOME/myconfig/dotfiles/vconsole.conf /etc/vconsole.conf
+sudo cp $HOME/.myconfig/dotfiles/vconsole.conf /etc/vconsole.conf
 # Nerd font for powerlevel10k
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P $HOME
 sudo mv $HOME/*.ttf /usr/share/fonts
@@ -53,13 +53,13 @@ sudo dnf -y install pt-sans-fonts google-noto-kufi-arabic-fonts google-noto-sans
 
 printf "${yellow}>>>${nc} ${cyan}Setting up Vim...${nc}\n"
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-cp $HOME/myconfig/dotfiles/vimrc $HOME/.vimrc
+cp $HOME/.myconfig/dotfiles/vimrc $HOME/.vimrc
 vim +PluginInstall +qall
 
 printf "${yellow}>>>${nc} ${cyan}Installing zsh and oh-my-zsh...${nc}\n"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-cp $HOME/myconfig/dotfiles/zshrc $HOME/.zshrc
+cp $HOME/.myconfig/dotfiles/zshrc $HOME/.zshrc
 chsh -s $(which zsh)
 
 printf "${yellow}>>>${nc} ${cyan}Cleaning up the mess...${nc}\n"
