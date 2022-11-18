@@ -20,5 +20,6 @@ printf "${yellow}>>>${nc} ${cyan}Removing some useless apps...${nc}\n"
 sudo dnf -y remove \
 	kmail \
 	akregator \
-	kaddressbook
+	kaddressbook \
+	setroubleshoot
 
