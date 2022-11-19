@@ -96,21 +96,22 @@ source $ZSH/oh-my-zsh.sh
 # Otherwise start tmux
 #[[ -z "$TMUX" ]] && exec tmux
 
+# TTY display manager login
+#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+#exec startx
+#fi
+
 # Example aliases
 alias zcon="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias refresh="source ~/.zshrc"
 #alias batcon="upower -i `upower -e | grep 'BAT'`"
-alias mon="tmux new-session 'htop' \; split-window 'cava'"
+alias mon="tmux new-session 'htop' \; split-window 'cmatrix'"
 alias mon2="tmux new-session 'htop' \; split-window 'cava' \; split-window -h 'cmatrix'"
 alias ports="sudo netstat -tulpn | grep LISTEN"
 alias update="sudo dnf -y upgrade --refresh && sudo dnf -y autoremove"
 alias gaac="git add --all && git commit -m 'update'"
-#LS_COLORS='di=34'
-#alias ls="ls --color"
-#export LS_COLORS
+alias gpush="git push -u origin main"
+alias py="python3"
+alias books="ranger $HOME/Documents/Books"
 
-# TTY display manager login
-#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-#exec startx
-#fi
