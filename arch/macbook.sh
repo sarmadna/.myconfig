@@ -34,16 +34,15 @@ pacman -S \
 	networkmanager \
 	network-manager-applet
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 systemctl enable firewalld
 systemctl enable acpid
-systemctl enable tlp
 
 useradd -m -c "Sarmad" sarmad
 echo sarmad:1 | chpasswd
 usermod -aG wheel sarmad
 echo "sarmad ALL=(ALL) ALL" >> /etc/sudoers.d/sarmad
-
+passwd -l root
