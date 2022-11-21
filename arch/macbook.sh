@@ -11,11 +11,12 @@ hwclock --systohc
 sed -i '171s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "KEYMAP=us" >> /etc/vconsole.conf
 
-echo "archlinux" >> /etc/hostname
-echo "127.0.0.1		archlinux" >> /etc/hosts
-echo "::1		archlinux" >> /etc/hosts
-echo "127.0.1.1		archlinux.localdomain	archlinux" >> /etc/hosts
+echo "arch" >> /etc/hostname
+echo "127.0.0.1		arch" >> /etc/hosts
+echo "::1		arch" >> /etc/hosts
+echo "127.0.1.1		arch.localdomain	arch" >> /etc/hosts
 
 sed -i '37s/.//' /etc/pacman.conf
 pacman -S \
@@ -32,14 +33,17 @@ pacman -S \
 	broadcom-wl \
 	wpa_supplicant \
 	networkmanager \
-	network-manager-applet
+	network-manager-applet \
+	terminus-font
 
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 systemctl enable firewalld
 systemctl enable acpid
+
+echo "FONT=ter-v18b.psf.gz" >> /etc/vconsole.conf
 
 useradd -m -c "Sarmad" sarmad
 echo sarmad:1 | chpasswd
