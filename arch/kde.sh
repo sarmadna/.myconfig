@@ -6,7 +6,23 @@ sudo firewall-cmd --add-port=1025-65535/tcp --permanent
 sudo firewall-cmd --add-port=1025-65535/udp --permanent
 sudo firewall-cmd --reload
 
-sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-jack xorg plasma firefox dolphin konsole sddm packagekit-qt5 zsh htop neofetch wget tmux cmatrix vlc papirus-icon-theme
+sudo pacman -S \
+	xorg \
+	plasma \
+	firefox \
+	dolphin \
+	konsole \
+	sddm \
+	vlc \
+	zsh \
+	wget \
+	htop \
+	neofetch \
+	tmux \
+	cmatrix \
+	packagekit-qt5 \
+	papirus-icon-theme
+
 cp $HOME/.myconfig/dotfiles/tmux.conf $HOME/.tmux.conf
 
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P $HOME

@@ -11,7 +11,6 @@ hwclock --systohc
 sed -i '171s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-echo "KEYMAP=us" >> /etc/vconsole.conf
 
 echo "arch" >> /etc/hostname
 echo "127.0.0.1		arch" >> /etc/hosts
@@ -25,6 +24,12 @@ pacman -S \
 	efibootmgr \
 	base-devel \
 	linux-headers \
+	bluez \
+	bluez-utils \
+	pipewire \
+	pipewire-alsa \
+	pipewire-pulse \
+	pipewire-jack
 	acpi \
 	acpid \
 	acpi_call \
@@ -33,8 +38,7 @@ pacman -S \
 	broadcom-wl \
 	wpa_supplicant \
 	networkmanager \
-	network-manager-applet \
-	terminus-font
+	network-manager-applet
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -42,8 +46,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 systemctl enable firewalld
 systemctl enable acpid
-
-echo "FONT=ter-v18b.psf.gz" >> /etc/vconsole.conf
+systemctl enable fstrim.timer
 
 useradd -m -c "Sarmad" sarmad
 echo sarmad:1 | chpasswd
