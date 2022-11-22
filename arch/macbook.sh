@@ -30,7 +30,7 @@ pacman -S \
 	pipewire \
 	pipewire-alsa \
 	pipewire-pulse \
-	pipewire-jack
+	pipewire-jack \
 	acpi \
 	acpid \
 	acpi_call \
