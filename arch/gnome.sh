@@ -9,18 +9,11 @@ sudo firewall-cmd --reload
 sudo pacman -S \
 	xorg \
 	gnome \
-	firefox \
 	gnome-terminal \
 	gnome-tweaks \
 	ttf-dejavu \
 	gdm \
-	vlc \
-	zsh \
-	wget \
-	htop \
-	neofetch \
-	tmux \
-	cmatrix \
+	flatpak \
 	papirus-icon-theme
 
 cp $HOME/.myconfig/dotfiles/tmux.conf $HOME/.tmux.conf
