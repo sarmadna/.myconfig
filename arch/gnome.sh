@@ -8,12 +8,12 @@ sudo firewall-cmd --reload
 
 sudo pacman -S \
 	xorg \
-	plasma \
+	gnome \
 	firefox \
-	dolphin \
-	konsole \
+	gnome-terminal \
+	gnome-tweaks \
 	ttf-dejavu \
-	sddm \
+	gdm \
 	vlc \
 	zsh \
 	wget \
@@ -21,7 +21,6 @@ sudo pacman -S \
 	neofetch \
 	tmux \
 	cmatrix \
-	packagekit-qt5 \
 	papirus-icon-theme
 
 cp $HOME/.myconfig/dotfiles/tmux.conf $HOME/.tmux.conf
@@ -41,7 +40,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 cp $HOME/.myconfig/dotfiles/zshrc $HOME/.zshrc
 chsh -s $(which zsh)
 
-sudo systemctl enable sddm
+sudo systemctl enable gdm
 
 rm -rf $HOME/SFPro
 rm -rf $HOME/PowerlineFonts
