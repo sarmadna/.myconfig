@@ -9,18 +9,11 @@ sudo firewall-cmd --reload
 sudo pacman -S \
 	xorg \
 	plasma \
-	firefox \
 	dolphin \
 	konsole \
 	ttf-dejavu \
 	sddm \
-	vlc \
-	zsh \
-	wget \
-	htop \
-	neofetch \
-	tmux \
-	cmatrix \
+	flatpak \
 	packagekit-qt5 \
 	papirus-icon-theme
 
