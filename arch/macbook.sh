@@ -24,6 +24,7 @@ pacman -S \
 	efibootmgr \
 	base-devel \
 	linux-headers \
+	linux-firmware-qlogic \
 	bluez \
 	bluez-utils \
 	pipewire \
