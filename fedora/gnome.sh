@@ -16,8 +16,6 @@ sudo dnf -y remove \
 	gnome-shell-extension-background-logo
 
 printf "${yellow}>>>${nc} ${cyan}Applying theme...${nc}\n"
-#git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git $HOME/WhiteSur-icon-theme
-#sh $HOME/WhiteSur-icon-theme/install.sh -b
 gsettings set org.gnome.desktop.interface clock-format "12h"
 gsettings set org.gnome.desktop.interface enable-hot-corners false
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
@@ -27,5 +25,3 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', '
 printf "${yellow}>>>${nc} ${cyan}Copying images...${nc}\n"
 cp -rv $HOME/.myconfig/images $HOME/Pictures
 
-printf "${yellow}>>>${nc} ${cyan}Cleaning up...${nc}\n"
-#rm -rf $HOME/WhiteSur-icon-theme
