@@ -9,6 +9,7 @@ def main():
         "https://extensions.gnome.org/extension/19/user-themes/",
         "https://extensions.gnome.org/extension/7/removable-drive-menu/",
         "https://extensions.gnome.org/extension/615/appindicator-support/"
+        "https://extensions.gnome.org/extension/307/dash-to-dock/"
     ]
     for x in extensions:
         webbrowser.open_new_tab(x)
