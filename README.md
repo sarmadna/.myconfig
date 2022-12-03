@@ -34,4 +34,3 @@ First run the `base.sh` script to install the basic apps
 
 Then run the other scripts depending on the DE you use like `gnome.sh` or  `kde.sh`
 
-
