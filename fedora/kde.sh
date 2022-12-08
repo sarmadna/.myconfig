@@ -23,6 +23,8 @@ sudo dnf -y remove \
 	akregator \
 	korganizer \
 	dnfdragora \
+	kdeconnectd \
 	kaddressbook \
 	setroubleshoot
+
 
