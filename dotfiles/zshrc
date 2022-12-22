@@ -114,4 +114,5 @@ alias gaac="git add --all && git commit -m 'update'"
 alias gpush="git push -u origin main"
 alias py="python3"
 alias books="ranger $HOME/Documents/Books"
+alias code="code --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
